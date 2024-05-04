@@ -1,0 +1,39 @@
+{
+"scripts": {
+"start": "pm2 start index.js --deep-monitoring --attach --name wabot",
+"stop": "pm2 stop wabot",
+"restart": "pm2 restart wabot"
+},
+"dependencies": {
+"@whiskeysockets/baileys": "latest",
+"google-tts-api": "^2.0.2",
+"pino": "^7.0.5",
+"pm2": "^5.3.1",
+"util": "^0.12.4",
+"express": "latest",
+"axios": "^1.2.5",
+"file_size_url": "^1.0.4",
+"cheerio": "^1.0.0-rc.12",
+"ios-news": "^1.0.0",  
+"sirasa-news": "latest",   
+"wabetainfo": "latest",
+"@sl-code-lords/esana-news": "latest",
+"@sl-code-lords/wabetainfo": "latest",
+"@sl-code-lords/si-subdl": "^1.1.1",  
+"@kaveesha-sithum/derana-news": "latest",
+"tech-news-scraper": "latest",
+"hirunews-scrap": "latest",    
+"@bochilteam/scraper": "^4.0.22-alpha.0",
+"fs-extra": "^11.1.0",
+"api-dylux": "latest",
+"mfiredlcore-vihangayt": "^1.0.0",
+"path": "^0.12.7",
+"youtubedl-core": "^4.11.4",
+"ytdl-core": "latest",
+"node-fetch": "^2.6.1" ,
+"megajs": "1.1.0",
+"vm": "^0.1.0",
+"g-i-s": "^2.1.6",  
+"qrcode-terminal": "^0.12.0"
+}
+}
