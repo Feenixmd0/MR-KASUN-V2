@@ -6,4 +6,4 @@
 
 ### DEPLOY HEROKU
 
-<a href='https://dashboard.heroku.com/new?template=https://github.com/kushansewmina1234/DARK-SHAN-MD' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/DEPLOY HEROKU-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
+<a href='https://dashboard.heroku.com/new?template=https://github.com/Feenixmd0/MR-KASUN-V2' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/DEPLOY HEROKU-purple?style=for-the-badge&logo=heroku&logoColor=white'/></a>
