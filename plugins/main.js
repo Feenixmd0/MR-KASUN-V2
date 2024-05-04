@@ -243,11 +243,11 @@ if(commands[i].category === 'search'){
 menuc4 += `*│►* .${commands[i].pattern}\n`
 }}};
 
-let menuc = ``
+let menuc5 = ``
 for (let i=0;i<commands.length;i++) { 
 if(commands[i].category === 'download'){
   if(!commands[i].dontAddCommandList){
-menuc += `*│►* .${commands[i].pattern}\n`
+menuc5 += `*│►* .${commands[i].pattern}\n`
 }}};
 
 let menuc6 = ``
@@ -268,6 +268,11 @@ let menumg = `*Hellow👸* ${pushname}
 *│   ───────*
 
 ${menuc2}*╰───────────●●►*
+
+*│🧙‍♂️ DOWNLOAD COMMANDS*
+*│   ───────*
+
+${menuc5}*╰───────────●●►*                    
 
 *•ᴹᴿ ᴷᴬˢᵁᴺ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
       
