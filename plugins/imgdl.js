@@ -31,7 +31,7 @@ try{
         for (let i = 0; i < topImages.length; i++) {
             const imageUrl = topImages[i].url
           let Message = {
-              image: { url: imageUrl },caption: `*-------「 DARK SHAN GIMAGE SEARCH 」-------*\n🤠*Image ${i + 1}`,
+              image: { url: imageUrl },caption: `*MR KASUN IMAGE SEARCH*\n🤠*Image ${i + 1}`,
            }
 
 //let senda = await conn.sendMessage(from, { document: {url: imageUrl },fileName: 'image' + '.jpg', mimetype: 'image/jpeg' ,caption: `*-------「 VAJIRA MD GIMAGE SEARCH 」-------*\n🤠 *Query* : ${q}\n\n🔗 *Image ${i + 1} Url* : ${imageUrl}`,}, { quoted: mek })  
