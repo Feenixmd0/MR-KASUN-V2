@@ -3,7 +3,7 @@ const config = require('../config')
 const { cmd, commands } = require('../command')
 
 cmd({
-    pattern: "dapk",
+    pattern: "apk",
     react: "📁",
     category: "download",
     filename: __filename
