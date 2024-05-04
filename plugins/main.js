@@ -26,7 +26,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
     try{
 const tes = `${config.ALIVE}
 
-𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙰𝙲𝙷𝙸𝙱𝙾𝚃`
+𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙺𝙰𝚂𝚄𝙽`
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
 } catch (e) {
@@ -262,7 +262,7 @@ let menumg = `*Hellow👸* ${pushname}
 *│🕵️‍♂️ 𝘙𝘶𝘯 𝘛𝘪𝘮𝘦 -* ${runtime(process.uptime())} 
 *│🕵️‍♂️ 𝘙𝘢𝘮 𝘜𝘴𝘦 -* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *╰──────────●●►*
-*👸 DARK SHAN 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
+*👸 KASUN 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
 ╭────❲ *ᴍᴀɪɴ* ❳────╮
 ┃✺╭────────────···▸
 ┻✺│ 
@@ -282,7 +282,7 @@ ${menuc4}┳✺│
 ┃✺╰────────────···▸\n╰━═════════════━⦁┄⃟
 
    
-*•ᴅᴀʀᴋ ꜱʜᴀɴ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
+*•ᴍʀ ᴋᴀꜱᴜɴ ᴠ3 ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
       
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: menumg }, { quoted: mek, messageId:genMsgId() })
 } catch (e) {
@@ -306,7 +306,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
 const tes = `┌───────────────────────
 ├ 🧬 *Uptime:-*  ${runtime(process.uptime())}
 ├ 🎲 *Ram usage:-*  ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-├ 🖥️ *Owners:-* *ᴛᴇᴄʜɴɪᴄᴀʟ ᴄʏʙᴇʀ*
+├ 🖥️ *Owners:-* *ᴍʀ ᴋᴀꜱᴜɴ*
 ├🕹️ *Version:-* 1.0.0
 └───────────────────────`
 
@@ -327,7 +327,7 @@ cmd({
     },
     async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe,isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
     try{
-            const tes = `*🥷𝘘𝘜𝘌𝘌𝘕 𝘋𝘌𝘞 𝘔𝘋 𝘚𝘜𝘗𝘗𝘖𝘙𝘛🥷* *Group Link:* https://chat.whatsapp.com/F4yX2YfAF14GzF3xwey848`
+            const tes = `*🥷𝙈𝙍 𝙆𝘼𝙎𝙐𝙉 𝘔𝘋 𝘚𝘜𝘗𝘗𝘖𝘙𝘛🥷* *Group Link:* https://chat.whatsapp.com/F4yX2YfAF14GzF3xwey848`
         await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek, messageId:genMsgId() })
 
   } catch (e) {
