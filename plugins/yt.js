@@ -63,7 +63,7 @@ const cap = `*⬇️MR KASUN VIDEO DOWNLOADER⬇️*
 
 *🪄Url:* ${anu.url}
 
-*ᴅᴀʀᴋ ꜱʜᴀɴ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ*`
+*ᴍʀ ᴋᴀꜱᴜɴ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ*`
 await conn.sendMessage(from, { image: { url: anu.thumbnail }, caption: cap}, { quoted: mek })
 const yt = await dl.youtubedl(anu.url).catch(async () => await dl.youtubedlv2(anu.url)) 
 const yt2 = await dl.youtubedlv2(anu.url)
@@ -103,7 +103,7 @@ const cap = `*⬇️MR KASUN AUDIO DOWNLOADER⬇️*
 
 *🪄Url:* ${anu.url}
 
-*ᴅᴀʀᴋ ꜱʜᴀɴ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ*`
+*ᴍʀ ᴋᴀꜱᴜɴ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ*`
 await conn.sendMessage(from, { image: { url: anu.thumbnail }, caption: cap}, { quoted: mek })
 let infoYt = await ytdl.getInfo(anu.url);
 if (infoYt.videoDetails.lengthSeconds >= videotime) {
