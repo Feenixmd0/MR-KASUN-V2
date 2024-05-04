@@ -16,6 +16,7 @@ const fs = require('fs')
 const P = require('pino')
 const path = require('path');
 const config = require('./config')
+const X = require("./config.js")
 const qrcode = require('qrcode-terminal')
 const util = require('util')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('./lib/functions')
@@ -45,23 +46,20 @@ function genMsgId() {
   //=========================================
 let previousLinkId = '1';
 //===================SESSION============================
-async function session(){
-	const df = path.join(__dirname, '/auth_info_baileys/creds.json');
+async function MakeSession() {
+    try {
+        console.log("WRITING SESSION...");
+        const {
+          data
+        } = await axios(`https://paste.c-net.org/${X.SESSION_ID.split(':')[1]}`);
+        await fs.writeFileSync("./session/creds.json", JSON.stringify(data));
+        console.log("SESSION CREATED SUCCESSFULLY✅");
+      } catch (err) {
+        console.log(err);
+      }
+}
+MakeSession();
 
-	if (!fs.existsSync(df)) {
-	if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
-	const sessdata = config.SESSION_ID
-	
-	if (sessdata.length > 295) {
-	const contentData =atob(config.SESSION_ID)   
-	await sleep(2000);   
-	fs.writeFile(df,contentData, () => {
-	console.log("✅ Session download completed and saved to creds.json !!")
-
-	})
-	}}
-	}
- session()
 // <<==========PORTS===========>>
 const express = require("express");
 const app = express();
