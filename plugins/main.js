@@ -26,6 +26,22 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
     try{
 const tes = `${config.ALIVE}
 
+🙌 *Hello i am MR-KASUN-V2 Whatsapp User Bot* 
+
+
+🎉 *Website:* https://youtube.com/@mrkasun-?si=uGluyqvbyseIi5ql
+
+👨‍💻 *Owners:*KASUN-SANDEEPA*
+
+🪩 *Our tiktok:* www.tiktok.com/@mr.kasun.ofc
+
+🌟 *Our WhatsApp Channel:* https://chat.whatsapp.com/L0RchYxWA8x2Lft8riYxny
+
+-🌼have a nice day🌻
+🔢 Reply below number,
+
+*POWERD_BY-MR_KASUN*
+       
 𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙺𝙰𝚂𝚄𝙽`
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
