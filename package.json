@@ -24,6 +24,7 @@
 "tech-news-scraper": "latest",
 "hirunews-scrap": "latest",    
 "@bochilteam/scraper": "^4.0.22-alpha.0",
+"wa-sticker-formatter": "^4.3.2",  
 "fs-extra": "^11.1.0",
 "api-dylux": "latest",
 "mfiredlcore-vihangayt": "^1.0.0",
