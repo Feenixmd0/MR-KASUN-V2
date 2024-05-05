@@ -50,7 +50,7 @@ cmd({
     pattern: "attp",
     react: "✨",
     alias: ["texttogif"],
-    desc: descg1,
+    desc: "convert text to gift",
     category: "convert",
     use: '.attp HI',
     filename: __filename
@@ -71,7 +71,7 @@ cmd({
     pattern: "toptt",
     react: "🔊",
     alias: ["toaudio"],
-    desc: descg3,
+    desc: "convert to audio",
     category: "convert",
     use: '.toptt <Reply to video>',
     filename: __filename
