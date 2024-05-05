@@ -267,6 +267,15 @@ mek.type === "stickerMessage"
 ) {
 command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply})
 }});
+
+
+if (config.AUTO_VOICE === 'true') {			       
+const url = 'https://gist.github.com/prabathLK/f602911954a959c8730aeb00a588d15d/raw'
+let { data } = await axios.get(url)
+for (vr in data){
+if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
+}}
+	
 //====================================================================
 switch (command) {
 case 'jid':
