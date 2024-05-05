@@ -8,6 +8,7 @@ module.exports = {
 SESSION_ID: process.env.SESSION_ID === undefined ? '' : process.env.SESSION_ID,
 ONLY_GROUP: process.env.ONLY_GROUP === undefined ? 'false' : process.env.ONLY_GROUP,
 ONLY_ME: process.env.ONLY_ME === undefined ? 'true' : process.env.ONLY_ME,
+OWNER_NAME: process.env.OWNER_NAME === undefined ? `kasun` : process.env.OWNER_NAME,    
 ADDRESSES: process.env.ADDRESSES === undefined ? '' : process.env.ADDRESSES,
 AUTO_VOICE: process.env.AUTO_VOICE === undefined ? 'false' : process.env.AUTO_VOICE,    
 ALIVE: process.env.ALIVE === undefined ? `Hello im alive now !!` : process.env.ALIVE,
