@@ -1,71 +1,8 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')	
-
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-async function fbDownloader(url) {
-	try {
-		const response1 = await axios({
-			method: 'POST',
-			url: 'https://snapsave.app/action.php?lang=vn',
-			headers: {
-				"accept": "*/*",
-				"accept-language": "vi,en-US;q=0.9,en;q=0.8",
-				"content-type": "multipart/form-data",
-				"sec-ch-ua": "\"Chromium\";v=\"110\", \"Not A(Brand\";v=\"24\", \"Microsoft Edge\";v=\"110\"",
-				"sec-ch-ua-mobile": "?0",
-				"sec-ch-ua-platform": "\"Windows\"",
-				"sec-fetch-dest": "empty",
-				"sec-fetch-mode": "cors",
-				"sec-fetch-site": "same-origin",
-				"Referer": "https://snapsave.app/vn",
-				"Referrer-Policy": "strict-origin-when-cross-origin"
-			},
-			data: {
-				url
-			}
-		});
-
-		let html;
-		const evalCode = response1.data.replace('return decodeURIComponent', 'html = decodeURIComponent');
-		eval(evalCode);
-		html = html.split('innerHTML = "')[1].split('";\n')[0].replace(/\\"/g, '"');
-
-		const $ = cheerio.load(html);
-		const download = [];
-
-		const tbody = $('table').find('tbody');
-		const trs = tbody.find('tr');
-
-		trs.each(function (i, elem) {
-			const trElement = $(elem);
-			const tds = trElement.children();
-			const quality = $(tds[0]).text().trim();
-			const url = $(tds[2]).children('a').attr('href');
-			if (url != undefined) {
-				download.push({
-					quality,
-					url
-				});
-			}
-		});
-
-		return {
-			success: true,
-			download
-		};
-	}
-	catch (err) {
-		return {
-			success: false
-		};
-	}
-}
-function fbreg(url) {
-const fbRegex = /(?:https?:\/\/)?(?:www\.)?(m\.facebook|facebook|fb)\.(com|me|watch)\/(?:(?:\w\.)*#!\/)?(?:groups\/)?(?:[\w\-\.]*\/)*([\w\-\.]*)/
-return fbRegex.test(url);
-}
-
+const fs = require('fs')
+const fg = require('api-dylux');
 
 
 cmd({
@@ -77,11 +14,45 @@ cmd({
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-await conn.sendMessage(from, { react: { text: '📥', key: mek.key }})
-await conn.sendMessage(from, { video: { url: q }, caption: config.FOOTER}, { quoted: mek })
-await conn.sendMessage(from, { react: { text: '✔', key: mek.key }})
-} catch (e) {
-  reply('*ERROR !!*')
+if (!args[0]) {
+        throw ` Please send the link of a Facebook video\n\nEXAMPLE :\n *${prefix + command}* https://fb.watch/7B5KBCgdO3`;
+    }
+
+    const urlRegex = /^(?:https?:\/\/)?(?:www\.)?(?:facebook\.com|fb\.watch)\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/i;
+    if (!urlRegex.test(args[0])) {
+        throw '⚠️ PLEASE GIVE A VALID URL.';
+    }
+     await reply(`Please wait...`);
+    try {
+        const result = await fg.fbdl(args[0]);
+        const tex = `
+  *Video Details* 
+📽️ *Title*: ${result.title}
+`;
+
+
+        const response = await fetch(result.videoUrl);
+        const arrayBuffer = await response.arrayBuffer();
+        const videoBuffer = Buffer.from(arrayBuffer);
+
+        // Save the videoBuffer to a temporary file
+        const randomName = `temp_${Math.floor(Math.random() * 10000)}.mp4`;
+        fs.writeFileSync(`./${randomName}`, videoBuffer);
+
+        // Send the video using client.sendMessage
+        await vajira.sendMessage(
+            from,
+            {
+                video: fs.readFileSync(`./${randomName}`),
+                caption: tex,
+            },
+            { quoted: mej }
+        );
+
+        fs.unlinkSync(`./${randomName}`);
+    } catch (error) {
+        console.log(error);
+        reply('⚠️ An error occurred while processing the request. Please try again later.');
 l(e)
 }
 })
