@@ -69,7 +69,7 @@ return fbRegex.test(url);
 
 
 cmd({
-  pattern: "dvideo",
+  pattern: "fb",
   react: "🔓",
   category: "download",
   dontAddCommandList: true,
