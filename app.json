@@ -30,7 +30,14 @@
       "required": false
  },
 
+
     
+    "AUTO_VOICE": {
+      "description": "Bot Voice",
+      "required": false
+ },
+    
+
     
     "ONLY_GROUP": {
       "description": "Work on only groups",
