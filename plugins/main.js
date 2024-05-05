@@ -30,7 +30,7 @@ const config = require('../config')
             'VERSION:3.0\n' +
             'FN:' + config.OWNER_NAME + '\n' +
             'ORG:;\n' +
-            'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
+            'TEL;type=CELL;type=VOICE;waid=' + OWNER[0] + ':+' + OWNER[0] + '\n' +
             'END:VCARD'
         let buttonMessaged = {
             contacts: { displayName: config.OWNER_NAME, contacts: [{ vcard }] },
@@ -43,7 +43,7 @@ const config = require('../config')
                     thumbnail: `https://telegra.ph/file/b714e9a697c2fd0794985.jpg`,
                     mediaType: 2,
                     mediaUrl: '',
-                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=Hii bro,I am ' + mek.pushName,
+                    sourceUrl: `https://wa.me/+` + OWNER[0] + '?text=Hii bro,I am ' + mek.pushName,
                 },
             },
         }
