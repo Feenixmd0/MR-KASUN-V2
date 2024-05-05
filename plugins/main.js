@@ -15,46 +15,7 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 } 
 
 
-cmd({
-    pattern: "owner",
-    react: "🔖",
-    desc: "To take owner number",
-    category: "main",
-    use: '.ban',
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{                   
-const config = require('../config')
-        const vcard = 'BEGIN:VCARD\n' +
-            'VERSION:3.0\n' +
-            'FN:' + config.OWNER_NAME + '\n' +
-            'ORG:;\n' +
-            'TEL;type=CELL;type=VOICE;waid=' + OWNER[0] + ':+' + OWNER[0] + '\n' +
-            'END:VCARD'
-        let buttonMessaged = {
-            contacts: { displayName: config.OWNER_NAME, contacts: [{ vcard }] },
-            contextInfo: {
-                externalAdReply: {
-                    title: config.OWNER_NAME,
-                    body: 'Touch here.',
-                    renderLargerThumbnail: true,
-                    thumbnailUrl: ``,
-                    thumbnail: `https://telegra.ph/file/b714e9a697c2fd0794985.jpg`,
-                    mediaType: 2,
-                    mediaUrl: '',
-                    sourceUrl: `https://wa.me/+` + OWNER[0] + '?text=Hii bro,I am ' + mek.pushName,
-                },
-            },
-        }
-  return await conn.sendMessage(from, buttonMessaged, {quoted: mek,
-							    })
-await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }}) 
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-}) 
+
 
 
 cmd({
