@@ -19,7 +19,7 @@ cmd({
     pattern: "owner",
     react: "🔖",
     desc: "To take owner number",
-    category: "owner",
+    category: "main",
     use: '.ban',
     filename: __filename
 },
