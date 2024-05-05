@@ -28,6 +28,7 @@
 "fs-extra": "^11.1.0",
 "api-dylux": "latest",
 "mfiredlcore-vihangayt": "^1.0.0",
+"@ffmpeg-installer/ffmpeg": "^1.1.0",  
 "path": "^0.12.7",
 "youtubedl-core": "^4.11.4",
 "ytdl-core": "latest",
