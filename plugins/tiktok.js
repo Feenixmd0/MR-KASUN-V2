@@ -43,12 +43,11 @@ if (!q) reply ('Enter Query Link!');
     } else {
       console.log ('Error: Unable to fetch TikTok video. Check the console logs for more details.');
     }
-  } catch (e) {
-    console.error(e);
-    reply('An error occurred while processing your request.');
+  
 await conn.sendMessage(from, { react: { text: '📥', key: mek.key }})
 } catch (e) {
-reply(N_FOUND)
+    console.error(e);
+    reply('An error occurred while processing your request.')
 l(e)
 }
 })	
