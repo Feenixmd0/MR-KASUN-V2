@@ -21,7 +21,7 @@ try{
 
 if (!q) reply ('Enter Query Link!');
 
-    let anu = await fetchJson(`https://api.lolhuman.xyz/api/tiktok2?apikey=GataDios&url=${encodeURIComponent(q)}`);
+    let anu = await fetchJson(`https://vajira-apis-803339515192.herokuapp.com/api/dowloader/tikok?url=${encodeURIComponent(q)}`);
 
     console.log('TikTok API Response:', anu);
 
