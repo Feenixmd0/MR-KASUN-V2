@@ -6,7 +6,6 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
 
 
 
-
 cmd({
             pattern: "tts",
             react: "💭",
@@ -44,7 +43,7 @@ l(e)
 }
 })
 
-
+/*
 
 cmd({
     pattern: "attp",
@@ -66,7 +65,7 @@ l(e)
 }
 })
 
-
+            
 cmd({
     pattern: "toptt",
     react: "🔊",
@@ -141,4 +140,5 @@ reply('*Error !!*')
 l(e)
 }
 })
+
             
