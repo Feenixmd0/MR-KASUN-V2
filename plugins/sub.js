@@ -2,7 +2,40 @@ const config = require('../config')
 const { cmd, commands } = require('../command')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 var {subsearch , subdl }  = require('@sl-code-lords/si-subdl')
+const Esana = require('@sl-code-lords/esana-news');
+var api = new Esana()
 
+
+
+cmd({
+    pattern: "esananews",
+    react: '🎙️',
+    desc: "To see esana news",
+    category: "search",
+    use: '.sirasa',
+    filename: __filename
+},
+async(conn, mek, m,{from, l, prefix, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+try{
+    const latst = await api.latest_id();
+            const nws = latst.results.news_id
+            let nn = q || nws
+            const ress = await api.news(nn);
+            const res = ress.results;
+
+            const txt2 = await conn.sendMessage(from, {image: 
+	    {url: res.COVER},caption: `\n*┃◉* *⇨ ᴛɪᴛᴇʟ :*
+ ${res.TITLE}\n\n*┃◉* *⇨ ᴅᴀᴛᴇ :*
+ ${res.PUBLISHED}\n\n*┃◉* *⇨ ᴜʀʟ :*
+ ${res.URL}\n\n*┃◉* *⇨ Description :*
+ ${res.DESCRIPTION}\n\n*𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚅𝙰𝙹𝙸𝚁𝙰 𝚈𝚃 ®*\n\n`},
+			{ quoted: mek });
+await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }}) 
+} catch (e) {
+reply()
+l(e)
+}
+})       
 
 
 cmd({
