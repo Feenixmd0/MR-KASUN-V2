@@ -11,7 +11,7 @@ cmd({
     pattern: "tiktok",
     alias: ["ttdl"],
     react: '🏷️',
-    desc: desc,
+    desc: "To download tiktok videos",
     category: "download",
     use: '.tiktok <Tiktok link>',
     filename: __filename
