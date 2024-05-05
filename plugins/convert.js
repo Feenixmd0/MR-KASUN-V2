@@ -57,7 +57,7 @@ cmd({
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
-if(!q) return await reply(imgmsg4)
+if(!q) return await reply()
 let bufff = await getBuffer("https://vihangayt.me/maker/text2gif?q=" + q)
 await conn.sendMessage(from, {sticker: await videoToWebp(bufff)}, {quoted: mek })
 } catch (e) {
@@ -79,7 +79,7 @@ cmd({
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
     let isquotedvid = m.quoted ? (m.quoted.type === 'videoMessage') : m ? (m.type === 'videoMessage') : false
-    if(!isquotedvid) return await reply(imgmsg1)
+    if(!isquotedvid) return await reply()
     let media = m.quoted ? await m.quoted.download() : await m.download()
     let auddio = await toPTT(media, 'mp4')
     let senda =  await conn.sendMessage(m.chat, {audio: auddio.options, mimetype:'audio/mpeg'}, {quoted:m})
