@@ -23,7 +23,7 @@ if (!args[0]) {
         throw '⚠️ PLEASE GIVE A VALID URL.';
     }
      await reply(`Please wait...`);
-    try {
+    
         const result = await fg.fbdl(args[0]);
         const tex = `
   *Video Details* 
@@ -46,12 +46,12 @@ if (!args[0]) {
                 video: fs.readFileSync(`./${randomName}`),
                 caption: tex,
             },
-            { quoted: mej }
+            { quoted: mek }
         );
 
         fs.unlinkSync(`./${randomName}`);
-    } catch (error) {
-        console.log(error);
+    } catch (e) {
+        console.log(e);
         reply('⚠️ An error occurred while processing the request. Please try again later.');
 l(e)
 }
