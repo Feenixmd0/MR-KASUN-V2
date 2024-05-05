@@ -95,7 +95,7 @@ cmd({
     pattern: "sticker",
     react: "🔮",
     alias: ["s","stic"],
-    desc: descg,
+    desc: "Convert to sticker",
     category: "convert",
     use: '.sticker <Reply to image>',
     filename: __filename
