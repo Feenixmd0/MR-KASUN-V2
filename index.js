@@ -127,7 +127,7 @@ require("./plugins/" + plugin);
 });
 console.log('Plugins installed ✅')
 console.log('Bot connected ✅')
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: `MR KASUN Md Connected Successfuly•` } ,{messageId:genMsgId()} )    
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { text: `MR KASUN Md Connected Successfuly•https://wa.me/+94772801923?text=_💗MR-KASUNﾒ-OF⃝⃙̶̽C🍃ᴰ̥⃑͢🕊️̅` } ,{messageId:genMsgId()} )    
 sleep(5000)
 
  
