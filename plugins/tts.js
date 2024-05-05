@@ -1,4 +1,6 @@
-const { cmd } = require('../command')
+const config = require('../config')
+const { cmd, commands } = require('../command')
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')	
 const googleTTS = require("google-tts-api");
 
 
