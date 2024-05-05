@@ -1,4 +1,4 @@
-const config = require('../config')
+ const config = require('../config')
 const { cmd, commands } = require('../command')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')	
 const googleTTS = require("google-tts-api");
@@ -10,7 +10,7 @@ cmd({
             pattern: "tts",
             react: "💭",
             desc: "q to speech.",
-            category: "convertp",
+            category: "convert",
             filename: __filename,
             use: '<Hii,this is Secktor>',
        },
@@ -18,7 +18,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
 if(!isOwner && !isSachintha && !isSavi && !isSadas && !isMani && !isMe)return;
     try{
         async(mek, m, q) => {
-            if (!q) return m.reply('Please give me Sentence to change into audio.')
+            if (!q) return reply('Please give me Sentence to change into audio.')
             let qtts = q
             const ttsurl = googleTTS.getAudioUrl(qtts, {
                 lang: "en",
@@ -43,7 +43,7 @@ l(e)
 }
 })
 
-/**
+
 
 cmd({
     pattern: "attp",
@@ -141,4 +141,4 @@ l(e)
 }
 })
 
-  **/          
+     
