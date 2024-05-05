@@ -12,7 +12,7 @@ cmd({
   dontAddCommandList: true,
   filename: __filename
 },
-async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
+async(conn, mek, m,{from, l, quoted, body, prefix, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
 try{
 if (!args[0]) {
         throw ` Please send the link of a Facebook video\n\nEXAMPLE :\n *${prefix + command}* https://fb.watch/7B5KBCgdO3`;
@@ -40,7 +40,7 @@ if (!args[0]) {
         fs.writeFileSync(`./${randomName}`, videoBuffer);
 
         // Send the video using client.sendMessage
-        await vajira.sendMessage(
+        await conn.sendMessage(
             from,
             {
                 video: fs.readFileSync(`./${randomName}`),
