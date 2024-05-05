@@ -28,7 +28,7 @@ try{
  ${res.TITLE}\n\n*┃◉* *⇨ ᴅᴀᴛᴇ :*
  ${res.PUBLISHED}\n\n*┃◉* *⇨ ᴜʀʟ :*
  ${res.URL}\n\n*┃◉* *⇨ Description :*
- ${res.DESCRIPTION}\n\n*𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚅𝙰𝙹𝙸𝚁𝙰 𝚈𝚃 ®*\n\n`},
+ ${res.DESCRIPTION}\n\n*𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙼𝚁 𝙺𝙰𝚂𝚄𝙽 ®*\n\n`},
 			{ quoted: mek });
 await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }}) 
 } catch (e) {
