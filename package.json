@@ -27,6 +27,7 @@
 "wa-sticker-formatter": "^4.3.2",  
 "fs-extra": "^11.1.0",
 "api-dylux": "latest",
+"os": "^0.1.2",
 "mfiredlcore-vihangayt": "^1.0.0",
 "@ffmpeg-installer/ffmpeg": "^1.1.0",  
 "path": "^0.12.7",
