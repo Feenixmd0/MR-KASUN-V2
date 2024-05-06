@@ -111,6 +111,29 @@ l(e)
 }
 })
 
+
+cmd({
+    pattern: "demote",
+    react: "🔖",
+    desc: "demote admin to a member",
+    category: "main",
+    use: '.demote',
+    filename: __filename
+},
+async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {                   
+try {     if (!m.isGroup) return reply(`only for groups`);
+            if (!isBotAdmins) return reply(`I can't do that. give group admin`);
+                                  
+         	let users = mek.mentionedJid ? mek.mentionedJid : mek.quoted ? mek.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
+		await conn.groupParticipantsUpdate(mek.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
+await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }}) 
+} catch (e) {
+reply('*Error !!*')
+l(e)
+}
+}) 		    
+
+
 cmd({
   pattern: "kick",
   alias: [".."],
