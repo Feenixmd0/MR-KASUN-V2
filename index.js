@@ -269,6 +269,21 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 }});
 
 
+
+//autostatus view
+        conn.ev.on('messages.upsert', async chatUpdate => {
+        	if (config.AUTO_STATUS_READ === 'true') {
+            mek = chatUpdate.messages[0]
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') {
+            	await conn.readMessages([mek.key]) }
+            }
+    })
+
+
+
+
+
+	
 if (config.AUTO_VOICE === 'true') {			       
 const url = 'https://gist.github.com/prabathLK/f602911954a959c8730aeb00a588d15d/raw'
 let { data } = await axios.get(url)
