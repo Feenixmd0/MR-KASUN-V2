@@ -49,6 +49,11 @@
       "description": "Work on only You",
       "required": true
     },
+
+    "AUTO_STATUS_READ": {
+      "description": "To enable auto status view",
+      "required": true
+    },
     
     "ALIVE": {
       "description": "Put your alive message.",
