@@ -16,6 +16,7 @@
 "cheerio": "^1.0.0-rc.12",
 "ios-news": "^1.0.0",  
 "sirasa-news": "latest",   
+"moment-timezone": "latest", 
 "wabetainfo": "latest",
 "@sl-code-lords/esana-news": "latest",
 "@sl-code-lords/wabetainfo": "latest",
