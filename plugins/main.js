@@ -1,7 +1,7 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
-const owner = JSON.parse(fs.readFileSync('./lib/owner.json'))
 const fs = require('fs')
+const owner = JSON.parse(fs.readFileSync('./lib/owner.json'))
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
  function genMsgId() {
   const prefix = "3EB";
