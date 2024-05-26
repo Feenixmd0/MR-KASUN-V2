@@ -24,36 +24,29 @@ cmd({
 },
 async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
     try{
-const tes = `${config.ALIVE}
+const tes = `*⭕ ɴᴀᴍᴇ:|"💗MR KASUNﾒ OF⃝⃙̶̽C🍃ᴰ̥⃑͢🕊️̅   🐻💕*
+*⭕ ᴀɢᴇ:| 20  🥺♥️✨*
+*⭕ ғʀᴏᴍ:|මාතලේ  🙈🍭*
+*⭕ ɢᴇɴᴅᴇʀ:| BOY 😌🌸✨*
+*⭕  ꜱʟ°᭄🇱🇰™️ᴀɴᴏɴʏᴍᴏᴜꜱ*
 
-┏┅┉⃝┅┅┅┅⃟┅◂ ◃ ◉ ▹ ▸┅⃟┅┅┅┅⃝┅┅┓
+🙌 *Hello i am MR-KASUN-V2 Whatsapp User Bot* 
 
-╟ ♤ 𝚃𝙷𝙰𝙽𝙺𝚂 𝙵𝙾𝚁 𝙲𝙷𝙾𝙾𝚂𝙴 *MR_KASUN-V2*👨‍💻┋
+https://telegra.ph/file/2ffbae67f9dab0e19452d.jpg
 
-┋
+Repo//: https://github.com/Feenixmd0/MR-KASUN-V2
 
-╟ ♤ 𝙳𝙴𝚅𝙰𝙻𝙾𝙿𝙴𝚁 𝙱𝚈 *MR_KASUN-V2*✅
+🎉 *Website:* https://youtube.com/@mrkasun-?si=uGluyqvbyseIi5ql
 
-┋🍀have a nice day🌻
+👨‍💻 *Owners:*https://wa.me/+94772801923?text=_💗MR-KASUNﾒ-OF⃝⃙̶̽C🍃ᴰ̥⃑͢🕊️̅ *
 
-╟ 𝚃𝚄𝚃𝙾𝚁𝙸𝙰𝙻 𝙱𝙾𝚃 𝙲𝚁𝙴𝙰𝚃𝙴 𝚅𝙸𝙳𝙴𝙾
+🪩 *Our tiktok:* www.tiktok.com/@mr.kasun.ofc
 
-┋https://youtu.be/t7TLI7pHnF4?si=WGyI14Atcva5wshr
+🌟 *Our WhatsApp Channel:* https://chat.whatsapp.com/L0RchYxWA8x2Lft8riYxny
 
-╟ ♤ 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙲𝙷𝙰𝙽𝙽𝙴𝙻
+-🌼have a nice day
 
-┋https://chat.whatsapp.com/L0RchYxWA8x2Lft8riYxny 
-
-◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎ 🍀WELCOME TO MR KASUN V2👨‍💻🍁
-
-                         *MR_KASUN-V2*
-
-◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎ 👹 Whatsapp Bot 👹
-𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍: *https://wa.me/+94772801923?text=_💗MR-KASUNﾒ-OF⃝⃙̶̽C🍃ᴰ̥⃑͢🕊️̅ ✨
-
-┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┛*POWERD*BY-MR.KASUN-V2*
-                    
-*🌻Have A Nice Day..*🌻
+*POWERD_BY-MR_KASUN*
 `
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
