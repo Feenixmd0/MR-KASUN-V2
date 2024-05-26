@@ -26,7 +26,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
     try{
 const tes = `${config.ALIVE}
 
-𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙰𝙲𝙷𝙸𝙱𝙾𝚃`
+𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚅𝙰𝙹𝙸𝚁𝙰`
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
 } catch (e) {
@@ -41,7 +41,7 @@ cmd({
         filename: __filename
     },
   async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,isSachintha, isSavi, isSadas, isMani, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-if(!isOwner && !isSachintha && !isSavi && !isSadas && !isMani && !isMe)return;
+if(!isOwner && !isMe)return;
     try{    const { exec } = require("child_process")
             reply('Restarting')
             exec('pm2 restart all')
@@ -217,7 +217,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
     try{
     let menuc1 = ``
 for (let i=0;i<commands.length;i++) { 
-if(commands[i].category === 'admin'){
+if(commands[i].category === 'convert'){
 if(!commands[i].dontAddCommandList){
 menuc1 += `*│►* .${commands[i].pattern}\n`
 }}};
@@ -231,7 +231,7 @@ for (let i=0;i<commands.length;i++) {
 
 let menuc3 = ``
 for (let i=0;i<commands.length;i++) { 
-if(commands[i].category === 'convert'){
+if(commands[i].category === 'group'){
   if(!commands[i].dontAddCommandList){
     menuc3 += `*│►* .${commands[i].pattern}\n`
 }}};
@@ -262,14 +262,39 @@ let menumg = `*Hellow👸* ${pushname}
 *│🕵️‍♂️ 𝘙𝘶𝘯 𝘛𝘪𝘮𝘦 -* ${runtime(process.uptime())} 
 *│🕵️‍♂️ 𝘙𝘢𝘮 𝘜𝘴𝘦 -* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *╰──────────●●►*
-*👸 𝘘𝘶𝘦𝘦𝘯 𝘋𝘦𝘸 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
+*👸 𝘝𝘈𝘑𝘐𝘙𝘈 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
 *╭──────────●●►*
 *│🧙‍♂️ MAIN COMMANDS*
 *│   ───────*
 
 ${menuc2}*╰───────────●●►*
 
-*•Qᴜᴇᴇɴ ᴅᴇᴡ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
+*╭──────────●●►*
+*│🧙‍♂️ GROUP COMMANDS*
+*│   ───────*
+
+${menuc3}*╰───────────●●►*
+
+*╭──────────●●►*
+*│🧙‍♂️ DOWNLOAD COMMANDS*
+*│   ───────*
+
+${menuc}*╰───────────●●►*
+
+*╭──────────●●►*
+*│🧙‍♂️ SEARCH COMMANDS*
+*│   ───────*
+
+${menuc4}*╰───────────●●►*
+
+*╭──────────●●►*
+*│🧙‍♂️ OTHER COMMANDS*
+*│   ───────*
+
+${menuc6}*╰───────────●●►*
+
+
+*•ᴋᴀꜱᴜɴ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
       
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: menumg }, { quoted: mek, messageId:genMsgId() })
 } catch (e) {
@@ -293,7 +318,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
 const tes = `┌───────────────────────
 ├ 🧬 *Uptime:-*  ${runtime(process.uptime())}
 ├ 🎲 *Ram usage:-*  ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-├ 🖥️ *Owners:-* *Darkmax Team*
+├ 🖥️ *Owners:-* *Vajira Team*
 ├🕹️ *Version:-* 1.0.0
 └───────────────────────`
 
@@ -314,7 +339,7 @@ cmd({
     },
     async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,  isSachintha, isSavi, isSadas, isMani, isMe,isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
     try{
-            const tes = `*🥷𝘘𝘜𝘌𝘌𝘕 𝘋𝘌𝘞 𝘔𝘋 𝘚𝘜𝘗𝘗𝘖𝘙𝘛🥷* *Group Link:* https://chat.whatsapp.com/F4yX2YfAF14GzF3xwey848`
+            const tes = `*🥷𝘝𝘈𝘑𝘐𝘙𝘈 𝘔𝘋 𝘚𝘜𝘗𝘗𝘖𝘙𝘛🥷* *Group Link:* https://whatsapp.com/channel/0029VadExMQHwXb9GtsC1A24`
         await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek, messageId:genMsgId() })
 
   } catch (e) {
