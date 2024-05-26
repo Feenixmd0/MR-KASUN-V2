@@ -48,7 +48,7 @@ const tes = `${config.ALIVE}
 
                          *MR_KASUN-V2*
 
-◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎ 👹 ```Whatsapp Bot``` 👹
+◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎ 👹 Whatsapp Bot 👹
 𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍: *https://wa.me/+94772801923?text=_💗MR-KASUNﾒ-OF⃝⃙̶̽C🍃ᴰ̥⃑͢🕊️̅ ✨
 
 ┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┛*POWERD*BY-MR.KASUN-V2*
