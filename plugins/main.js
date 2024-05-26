@@ -26,7 +26,35 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
     try{
 const tes = `${config.ALIVE}
 
-𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚅𝙰𝙹𝙸𝚁𝙰`
+┏┅┉⃝┅┅┅┅⃟┅◂ ◃ ◉ ▹ ▸┅⃟┅┅┅┅⃝┅┅┓
+
+╟ ♤ 𝚃𝙷𝙰𝙽𝙺𝚂 𝙵𝙾𝚁 𝙲𝙷𝙾𝙾𝚂𝙴 *MR_KASUN-V2*👨‍💻┋
+
+┋
+
+╟ ♤ 𝙳𝙴𝚅𝙰𝙻𝙾𝙿𝙴𝚁 𝙱𝚈 *MR_KASUN-V2*✅
+
+┋🍀have a nice day🌻
+
+╟ 𝚃𝚄𝚃𝙾𝚁𝙸𝙰𝙻 𝙱𝙾𝚃 𝙲𝚁𝙴𝙰𝚃𝙴 𝚅𝙸𝙳𝙴𝙾
+
+┋https://youtu.be/t7TLI7pHnF4?si=WGyI14Atcva5wshr
+
+╟ ♤ 𝚆𝙷𝙰𝚃𝚂𝙰𝙿𝙿 𝙲𝙷𝙰𝙽𝙽𝙴𝙻
+
+┋https://chat.whatsapp.com/L0RchYxWA8x2Lft8riYxny 
+
+◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎ 🍀WELCOME TO MR KASUN V2👨‍💻🍁
+
+                         *MR_KASUN-V2*
+
+◎┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅◎ 👹 ```Whatsapp Bot``` 👹
+𝘽𝙊𝙏 𝙊𝙒𝙉𝙀𝙍: *https://wa.me/+94772801923?text=_💗MR-KASUNﾒ-OF⃝⃙̶̽C🍃ᴰ̥⃑͢🕊️̅ ✨
+
+┗┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┛*POWERD*BY-MR.KASUN-V2*
+                    
+*🌻Have A Nice Day..*🌻
+`
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
 } catch (e) {
