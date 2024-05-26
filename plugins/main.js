@@ -1,7 +1,5 @@
 const config = require('../config')
 const { cmd, commands } = require('../command')
-const fs = require('fs')
-const owner = JSON.parse(fs.readFileSync('./lib/owner.json'))
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
  function genMsgId() {
   const prefix = "3EB";
@@ -15,51 +13,6 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 
   return randomText;
 } 
-
-
-cmd({
-    pattern: "owner",
-    react: "🔖",
-    desc: "To take owner number",
-    category: "owner",
-    use: '.ban',
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
-try{                   
-const config = require('../config')
-        const vcard = 'BEGIN:VCARD\n' +
-            'VERSION:3.0\n' +
-            'FN:' + config.OWNER_NAME + '\n' +
-            'ORG:;\n' +
-            'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
-            'END:VCARD'
-        let buttonMessaged = {
-            contacts: { displayName: config.OWNER_NAME, contacts: [{ vcard }] },
-            contextInfo: {
-                externalAdReply: {
-                    title: config.OWNER_NAME,
-                    body: 'Touch here.',
-                    renderLargerThumbnail: true,
-                    thumbnailUrl: ``,
-                    thumbnail: `https://telegra.ph/file/b714e9a697c2fd0794985.jpg`,
-                    mediaType: 2,
-                    mediaUrl: '',
-                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=Hii bro,I am ' + mek.pushName,
-                },
-            },
-        }
-  return await conn.sendMessage(from, buttonMessaged, {quoted: mek,
-							    })
-await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }}) 
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-}) 
-
-
-
 cmd({
     pattern: "alive",
     react: "👾",
@@ -73,23 +26,7 @@ async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sen
     try{
 const tes = `${config.ALIVE}
 
-🙌 *Hello i am MR-KASUN-V2 Whatsapp User Bot* 
-
-
-🎉 *Website:* https://youtube.com/@mrkasun-?si=uGluyqvbyseIi5ql
-
-👨‍💻 *Owners:*KASUN-SANDEEPA*
-
-🪩 *Our tiktok:* www.tiktok.com/@mr.kasun.ofc
-
-🌟 *Our WhatsApp Channel:* https://chat.whatsapp.com/L0RchYxWA8x2Lft8riYxny
-
--🌼have a nice day🌻
-🔢 Reply below number,
-
-*POWERD_BY-MR_KASUN*
-       
-𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝙺𝙰𝚂𝚄𝙽`
+𝙿𝙾𝚆𝙴𝚁𝙳 𝙱𝚈 𝚂𝙰𝙲𝙷𝙸𝙱𝙾𝚃`
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
 } catch (e) {
@@ -152,29 +89,6 @@ reply('*Error !!*')
 l(e)
 }
 })
-
-
-cmd({
-    pattern: "demote",
-    react: "🔖",
-    desc: "demote admin to a member",
-    category: "main",
-    use: '.demote',
-    filename: __filename
-},
-async(conn, mek, m,{from, prefix, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {                   
-try {     if (!m.isGroup) return reply(`only for groups`);
-            if (!isBotAdmins) return reply(`I can't do that. give group admin`);
-                                  
-         	let users = mek.mentionedJid ? mek.mentionedJid : mek.quoted ? mek.quoted.sender : q.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await conn.groupParticipantsUpdate(mek.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
-await conn.sendMessage(from, { react: { text: `✅`, key: mek.key }}) 
-} catch (e) {
-reply('*Error !!*')
-l(e)
-}
-}) 		    
-
 
 cmd({
   pattern: "kick",
@@ -329,11 +243,11 @@ if(commands[i].category === 'search'){
 menuc4 += `*│►* .${commands[i].pattern}\n`
 }}};
 
-let menuc5 = ``
+let menuc = ``
 for (let i=0;i<commands.length;i++) { 
 if(commands[i].category === 'download'){
   if(!commands[i].dontAddCommandList){
-menuc5 += `*│►* .${commands[i].pattern}\n`
+menuc += `*│►* .${commands[i].pattern}\n`
 }}};
 
 let menuc6 = ``
@@ -348,29 +262,14 @@ let menumg = `*Hellow👸* ${pushname}
 *│🕵️‍♂️ 𝘙𝘶𝘯 𝘛𝘪𝘮𝘦 -* ${runtime(process.uptime())} 
 *│🕵️‍♂️ 𝘙𝘢𝘮 𝘜𝘴𝘦 -* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *╰──────────●●►*
-*👸 𝘔𝘙 𝘒𝘈𝘚𝘜𝘕 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
+*👸 𝘘𝘶𝘦𝘦𝘯 𝘋𝘦𝘸 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
 *╭──────────●●►*
 *│🧙‍♂️ MAIN COMMANDS*
 *│   ───────*
 
 ${menuc2}*╰───────────●●►*
 
-*│🧙‍♂️ DOWNLOAD COMMANDS*
-*│   ───────*
-
-${menuc5}*╰───────────●●►*                    
-
-*│🧙‍♂️ SEARCH COMMANDS*
-*│   ───────*
-
-${menuc4}*╰───────────●●►*
-
-*│🧙‍♂️ CONVERT COMMANDS*
-*│   ───────*
-
-${menuc3}*╰───────────●●►*      
-
-*•ᴹᴿ ᴷᴬˢᵁᴺ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
+*•Qᴜᴇᴇɴ ᴅᴇᴡ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
       
 await conn.sendMessage(from, { image: { url: config.LOGO }, caption: menumg }, { quoted: mek, messageId:genMsgId() })
 } catch (e) {
@@ -415,7 +314,7 @@ cmd({
     },
     async(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname,  isSachintha, isSavi, isSadas, isMani, isMe,isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply}) => {
     try{
-            const tes = `*🥷𝘔𝘙 𝘒𝘈𝘚𝘜𝘕 𝘔𝘋 𝘚𝘜𝘗𝘗𝘖𝘙𝘛🥷* *Group Link:* https://chat.whatsapp.com/F4yX2YfAF14GzF3xwey848`
+            const tes = `*🥷𝘘𝘜𝘌𝘌𝘕 𝘋𝘌𝘞 𝘔𝘋 𝘚𝘜𝘗𝘗𝘖𝘙𝘛🥷* *Group Link:* https://chat.whatsapp.com/F4yX2YfAF14GzF3xwey848`
         await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek, messageId:genMsgId() })
 
   } catch (e) {
