@@ -46,35 +46,18 @@ function genMsgId() {
   //=========================================
 let previousLinkId = '1';
 //===================SESSION============================
-/*
-
-async function MakeSession() {
-    try {
-        console.log("WRITING SESSION...");
-        const {
-          data
-        } = await axios(`https://paste.c-net.org/${X.SESSION_ID.split(':')[1]}`);
-        await fs.writeFileSync("./auth_info_baileys/creds.json", JSON.stringify(data));
-        console.log("SESSION CREATED SUCCESSFULLY✅");
-      } catch (err) {
-        console.log(err);
-      }
-}
-MakeSession();
-*/
-
-if (!fs.existsSync(__dirname + '/session/creds.json')) {
-  if (config.SESSION_ID) {
-    const sessdata = config.SESSION_ID.replace("VAJIRA-MD=", "")
-    const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-    filer.download((err, data) => {
-      if (err) throw err
-      fs.writeFile(__dirname + '/session/creds.json', data, () => {
-        console.log("Session download completed !! ✓")
+if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
+    if (config.SESSION_ID) {
+      const sessdata = config.SESSION_ID.replace("KASUN-MD=", "")
+      const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
+      filer.download((err, data) => {
+        if (err) throw err
+        fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
+          console.log("Session download completed !!")
+        })
       })
-    })
+    }
   }
-}
 // <<==========PORTS===========>>
 const express = require("express");
 const app = express();
