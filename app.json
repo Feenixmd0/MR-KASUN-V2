@@ -24,13 +24,6 @@
  },
 
 
-
-    "LOGO": {
-      "description": "Bot logo",
-      "required": false
- },
-
-
     
     "AUTO_VOICE": {
       "description": "Bot Voice",
