@@ -48,7 +48,7 @@ Repo//: https://github.com/Feenixmd0/MR-KASUN-V2
 
 *POWERD_BY-MR_KASUN*
 `
-await conn.sendMessage(from, { image: { url: config.LOGO }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
+await conn.sendMessage(from, { image: { url: 'https://telegra.ph/file/39720ca3dc603aeabe79d.jpg' }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
 } catch (e) {
 reply('*Error !!*\n\n' + e)
@@ -317,7 +317,7 @@ ${menuc6}*╰───────────●●►*
 
 *•ᴋᴀꜱᴜɴ ᴍᴅ ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ•*`
       
-await conn.sendMessage(from, { image: { url: config.LOGO }, caption: menumg }, { quoted: mek, messageId:genMsgId() })
+await conn.sendMessage(from, { image: { url: 'https://telegra.ph/file/ca00c3273e33ea7c7e8d3.jpg' }, caption: menumg }, { quoted: mek, messageId:genMsgId() })
 } catch (e) {
 reply('*Error !!*')
 l(e)
