@@ -10,6 +10,7 @@ const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const ffmpeg = require('fluent-ffmpeg')
 let { img2url } = require('@blackamda/telegram-image-url');
 const fileType = require("file-type");
+const fs = require('fs');
 ffmpeg.setFfmpegPath(ffmpegPath);
 
 
