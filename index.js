@@ -283,7 +283,7 @@ command.function(conn, mek, m,{from, l, quoted, body, isCmd, command, args, q, i
 
 	
 if (config.AUTO_VOICE === 'true') {			       
-const url = 'https://gist.githubusercontent.com/X-Notiya/cb99be100d09b54679b715d1763c6364/raw'
+const url = 'https://gist.github.com/VajiraTech/5a665e3e2762aea7c8fb5514af35c8dc/raw'
 let { data } = await axios.get(url)
 for (vr in data){
 if((new RegExp(`\\b${vr}\\b`,'gi')).test(body)) conn.sendMessage(from,{audio: { url : data[vr]},mimetype: 'audio/mpeg',ptt:true},{quoted:mek})   
