@@ -2,7 +2,7 @@
 
 ### SCAN QR 
 
-<a href='https://mr-kasun-qr.onrender.com/' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/SCAN QR CODE-brown?style=for-the-badge&logo=opencv&logoColor=white'/></a>
+<a href='https://cyber-streaming-d9893d646f0a.herokuapp.com/' target="_blank"><img alt='Fork repo' src='https://img.shields.io/badge/SCAN QR CODE-brown?style=for-the-badge&logo=opencv&logoColor=white'/></a>
 
 ### DEPLOY HEROKU
 
