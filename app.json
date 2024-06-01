@@ -9,7 +9,13 @@
     "OWNER": {
       "description": "Put the number here.",
       "required": true
-    },  
+    },
+
+    },
+        "OWNER-NAME": {
+            "description": "put Your name herd",
+            "required": true,
+            "value": "KASUN "
 
     "SESSION_ID": {
       "description": "Enter session-id here",
