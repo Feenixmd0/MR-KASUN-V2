@@ -15,7 +15,7 @@ const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, 
 } 
 cmd({
     pattern: "alive",
-    react: "👾",
+    react: "👨‍💻",
     alias: ["online","test","bot"],
     desc: "Check bot online or no.",
     category: "main",
@@ -46,7 +46,7 @@ Repo//: https://github.com/Feenixmd0/MR-KASUN-V2
 
 -🌼have a nice day
 
-*POWERD_BY-MR_KASUN*
+༄POWERD°᭄BY MR KASUN V2→(° °)
 `
 await conn.sendMessage(from, { image: { url: 'https://telegra.ph/file/39720ca3dc603aeabe79d.jpg' }, caption: tes }, { quoted: mek  ,messageId:genMsgId() })
 
@@ -283,7 +283,7 @@ let menumg = `*Hellow👸* ${pushname}
 *│🕵️‍♂️ 𝘙𝘶𝘯 𝘛𝘪𝘮𝘦 -* ${runtime(process.uptime())} 
 *│🕵️‍♂️ 𝘙𝘢𝘮 𝘜𝘴𝘦 -* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 *╰──────────●●►*
-*👸 𝘝𝘈𝘑𝘐𝘙𝘈 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
+*👸 kasun 𝘔𝘥 𝘊𝘰𝘮𝘮𝘢𝘮𝘥 𝘗𝘢𝘯𝘦𝘭*
 *╭──────────●●►*
 *│🧙‍♂️ MAIN COMMANDS*
 *│   ───────*
